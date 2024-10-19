@@ -1,8 +1,23 @@
-import Link from "next/link";
+import ExperienceListItem from "./ExperienceListItem";
 
 const Experience = () => {
-  const listItemStyle = "border-b-2 border-blue-900";
-  const listLinkStyle = "block text-lg w-full py-2";
+  const experiences = [
+    {
+      href: "/experience/onikon",
+      name: "ONIKON Creative Inc.",
+      location: "Surrey, British Columbia, Canada",
+      position: "Front Web Developer",
+      duration: "Aug 2020 - May 2023",
+    },
+    {
+      href: "/experience/vinple",
+      name: "Vinple",
+      location: "Vancouver, British Columbia, Canada",
+      position: "Front End Developer",
+      duration: "Dec 2018 - Jul 2020",
+    },
+  ];
+
   return (
     <section
       id="experience"
@@ -13,27 +28,9 @@ const Experience = () => {
       </div>
       <div className="col-span-2">
         <ul>
-          <li className={listItemStyle}>
-            <Link className={listLinkStyle} href="/experience/onikon">
-              ONIKON Creative Inc. <br />
-              Front Web Developer <br />
-              <span className="text-xs text-stone-400">
-                Surrey, British Columbia, Canada
-              </span>
-              <br />
-              <span className="text-xs text-stone-400">
-                Aug 2020 - May 2023
-              </span>
-            </Link>
-          </li>
-          <li className={listItemStyle}>
-            <Link className={listLinkStyle} href="/experience/vinple">
-              Vinple <br />
-              Front End Developer <br />
-              <span className="text-xs text-stone-400">Vancouver, British Columbia, Canada</span><br />
-              <span className="text-xs text-stone-400">Dec 2018 - Jul 2020</span>
-            </Link>
-          </li>
+          {experiences.map((ele, index) => (
+            <ExperienceListItem key={`exp-${index}`} {...ele} />
+          ))}
         </ul>
       </div>
     </section>
