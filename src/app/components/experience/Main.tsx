@@ -17,15 +17,21 @@ const Experience = () => {
             <Link className={listLinkStyle} href="/experience/onikon">
               ONIKON Creative Inc. <br />
               Front Web Developer <br />
-              Surrey, British Columbia, Canada <br /> Aug 2020 - May 2023
+              <span className="text-xs text-stone-400">
+                Surrey, British Columbia, Canada
+              </span>
+              <br />
+              <span className="text-xs text-stone-400">
+                Aug 2020 - May 2023
+              </span>
             </Link>
           </li>
           <li className={listItemStyle}>
             <Link className={listLinkStyle} href="/experience/vinple">
               Vinple <br />
               Front End Developer <br />
-              Vancouver, British Columbia, Canada <br />
-              Dec 2018 - Jul 2020
+              <span className="text-xs text-stone-400">Vancouver, British Columbia, Canada</span><br />
+              <span className="text-xs text-stone-400">Dec 2018 - Jul 2020</span>
             </Link>
           </li>
         </ul>

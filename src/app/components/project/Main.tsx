@@ -1,4 +1,4 @@
-import PreviewItem from "../previewItem";
+import PreviewItem from "../common/PreviewItem";
 
 const Project = () => {
   return (
