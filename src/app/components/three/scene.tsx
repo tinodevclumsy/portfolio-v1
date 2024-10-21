@@ -12,7 +12,7 @@ const Scene: React.FC = () => {
         <OrbitControls autoRotate autoRotateSpeed={4} />
         <Lights />
         <Environment
-          files="./images/bg.hdr"
+          files="/images/bg.hdr"
           background
           backgroundBlurriness={0.8}
         />
