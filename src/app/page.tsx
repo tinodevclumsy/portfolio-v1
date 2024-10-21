@@ -1,20 +1,14 @@
-import dynamic from "next/dynamic";
-import Landing from "./components/sections/landing";
-import About from "./components/sections/about";
-import Experience from "./components/sections/experience";
-import Project from "./components/sections/project";
-import Contact from "./components/sections/contact";
-const Scene = dynamic(() => import("./components/three/scene"), { ssr: false });
+import Landing from "./components/landing/Main";
+import About from "./components/about/Main";
+import Experience from "./components/experience/Main";
+import Project from "./components/project/Main";
+import Contact from "./components/contact/Main";
 
 export default function Home() {
   return (
-    <div>
-      <Scene />
-      {/* grid grid-rows-[20px_1fr_20px] */}
-      {/* p-8 pb-20 gap-16 sm:p-20 */}
-      <div className=" items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
-        {/* flex flex-col gap-8 row-start-2 items-center sm:items-start */}
-        <main className="">
+    <>
+      <div className="items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
+        <main>
           <Landing />
           <About />
           <Experience />
@@ -22,6 +16,6 @@ export default function Home() {
           <Contact />
         </main>
       </div>
-    </div>
+    </>
   );
 }

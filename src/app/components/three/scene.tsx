@@ -2,8 +2,8 @@
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import Sphere from "./sphere";
-import Lights from "./lights";
+import Sphere from "./Sphere";
+import Lights from "./Lights";
 
 const Scene: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Scene: React.FC = () => {
         <OrbitControls autoRotate autoRotateSpeed={4} />
         <Lights />
         <Environment
-          files="./images/bg.hdr"
+          files="/images/bg.hdr"
           background
           backgroundBlurriness={0.8}
         />
