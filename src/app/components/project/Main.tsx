@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PreviewItem from "../common/PreviewItem";
 
 const Project = () => {
@@ -8,10 +9,21 @@ const Project = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <PreviewItem name="Personal Website" background="/images/main.webp" />
-        <PreviewItem name="VizDwell" background="/images/vizdwell.png" />
-        <PreviewItem name="Statify" background="/images/landing.webp"/>
-        <PreviewItem name="Wordzzle" background="/images/seungjun-lee-front-end-project-main.webp"/>
+        <Link href="/project/personal-website">
+          <PreviewItem name="Personal Website" background="/images/main.webp" />
+        </Link>
+        <Link href="/project/vizdwell">
+          <PreviewItem name="VizDwell" background="/images/vizdwell.png" />
+        </Link>
+        <Link href="/project/statify">
+          <PreviewItem name="Statify" background="/images/landing.webp" />
+        </Link>
+        <Link href="/project/wordzzle">
+          <PreviewItem
+            name="Wordzzle"
+            background="/images/seungjun-lee-front-end-project-main.webp"
+          />
+        </Link>
       </div>
     </section>
   );
