@@ -28,4 +28,11 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .text-stroke-sm {
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+  }
+  .text-stroke-white {
+    -webkit-text-stroke-color: #fff;
+  }
 }

@@ -4,10 +4,18 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Sphere from "./Sphere";
 import Lights from "./Lights";
+import { usePathname } from "next/navigation";
 
 const Scene: React.FC = () => {
+  const router = usePathname();
+  const is_home = router === "/";
+
+  console.log(is_home);
   return (
-    <div className="h-full fixed w-full top-0" style={{ zIndex: -1 }}>
+    <div
+      className={`h-full ${is_home ? "absolute" : "fixed"} w-full top-0`}
+      style={{ zIndex: -1 }}
+    >
       <Canvas>
         <OrbitControls autoRotate autoRotateSpeed={4} />
         <Lights />
