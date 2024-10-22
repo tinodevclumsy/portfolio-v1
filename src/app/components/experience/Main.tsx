@@ -21,10 +21,10 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="container grid grid-cols-1 md:grid-cols-3  mx-auto py-16 sm:py-10"
+      className="container grid grid-cols-1 md:grid-cols-3 mx-auto py-16 sm:py-10 sm:mt-16"
     >
       <div className="col-span-1">
-        <h3>Experience</h3>
+        <h3 className="text-4xl uppercase drop-shadow-md">Experience.</h3>
       </div>
       <div className="col-span-2">
         <ul>

@@ -9,16 +9,16 @@ const Header: React.FC = () => {
         <nav>
           <ul className="flex gap-6">
             <li>
-              <Link href="/#about">About.</Link>
+              <Link href="/#about">About</Link>
             </li>
             <li>
-              <Link href="/#experience">Experience.</Link>
+              <Link href="/#experience">Experience</Link>
             </li>
             <li>
-              <Link href="/#contact">Contact.</Link>
+              <Link href="/#contact">Contact</Link>
             </li>
             <li>
-              <Link href="/blog">Blog.</Link>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
         </nav>
