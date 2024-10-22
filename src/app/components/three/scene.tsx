@@ -10,7 +10,6 @@ const Scene: React.FC = () => {
   const router = usePathname();
   const is_home = router === "/";
 
-  console.log(is_home);
   return (
     <div
       className={`h-full ${is_home ? "absolute" : "fixed"} w-full top-0`}
