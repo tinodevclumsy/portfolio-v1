@@ -22,6 +22,7 @@ const About = () => {
             <li className="text-5xl text-stroke-sm text-stroke-white">Javascript</li>
             <li className="text-5xl text-stroke-sm text-stroke-white">Typescript</li>
             <li className="text-5xl text-stroke-sm text-stroke-white">React.js</li>
+            <li className="text-5xl text-stroke-sm text-stroke-white">Next.js</li>
             <li className="text-5xl text-stroke-sm text-stroke-white">Vue.js</li>
             <li className="text-5xl text-stroke-sm text-stroke-white">Node.js</li>
             <li className="text-5xl text-stroke-sm text-stroke-white">Wordpress</li>
