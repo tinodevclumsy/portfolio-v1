@@ -1,3 +1,5 @@
+import SocialNav from "../common/SocialNav";
+
 const Landing = () => {
   return (
     <section className="container flex items-center h-screen mx-auto">
@@ -10,6 +12,7 @@ const Landing = () => {
         </span>
         <br />
       </h1>
+      <SocialNav />
     </section>
   );
 };
