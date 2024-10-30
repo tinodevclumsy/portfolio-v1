@@ -14,7 +14,7 @@ const Page = () => {
       "Developed, delivered and maintained interactive and responsive websites with HTML, CSS, JS, JQuery and Wordpress",
       "Created and maintained Wordpress theme, plugins"
     ],
-    stack: ["HTML/CSS", "Vue.js", "Vuex/Pinia", "Nuxt.js", "Wordpress/PHP"],
+    stack: ["HTML/CSS", "Vue.js", "Vuex/Pinia", "Nuxt.js", "Wordpress/PHP", "jQuery", "Javascript"],
     image: [
       "/images/experience/onikon/portfolio-onikon-01.webp",
       "/images/experience/onikon/portfolio-onikon-02.webp",
