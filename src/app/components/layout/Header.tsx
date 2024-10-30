@@ -1,10 +1,31 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Header: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(document.documentElement.scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed w-full top-0 py-6 px-5">
+    <header
+      className={`fixed w-full top-0 py-6 px-5 transition-all duration-300 z-20 ${
+        isScrolled ? "bg-slate-950" : "bg-transparent"
+      }`}
+    >
       <div className="container flex justify-between items-center mx-auto">
-        <h6>SEUNGJUN LEE.</h6>
+        <Link href="/">
+          <h6>SEUNGJUN LEE.</h6>
+        </Link>
 
         <nav>
           <ul className="flex gap-6">
