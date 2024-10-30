@@ -2,11 +2,15 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { HiMenuAlt3 } from "react-icons/hi";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
   useEffect(() => {
+    setIsScrolled(document.documentElement.scrollTop > 0);
+    
     const handleScroll = () => {
       setIsScrolled(document.documentElement.scrollTop > 0);
     };
@@ -27,8 +31,53 @@ const Header: React.FC = () => {
           <h6>SEUNGJUN LEE.</h6>
         </Link>
 
-        <nav>
-          <ul className="flex gap-6">
+        <nav
+          className={`fixed flex items-center justify-start bg-slate-950 top-0 left-0 w-full h-full px-6 transition-transform duration-300 ${
+            isOpenMobileMenu ? "translate-x-0" : "translate-x-full"
+          } transform md:hidden`}
+        >
+          <ul className="flex gap-6 flex-col md:flex-row">
+            <li>
+              <Link
+                className="text-5xl text-stroke-sm text-stroke-white"
+                onClick={() => setIsOpenMobileMenu(false)}
+                href="/#about"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-5xl text-stroke-sm text-stroke-white"
+                onClick={() => setIsOpenMobileMenu(false)}
+                href="/#experience"
+              >
+                Experience
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-5xl text-stroke-sm text-stroke-white"
+                onClick={() => setIsOpenMobileMenu(false)}
+                href="/#contact"
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-5xl text-stroke-sm text-stroke-white"
+                onClick={() => setIsOpenMobileMenu(false)}
+                href="/blog"
+              >
+                Blog
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <nav className="hidden md:block">
+          <ul className="flex gap-6 flex-col md:flex-row">
             <li>
               <Link href="/#about">About</Link>
             </li>
@@ -43,6 +92,13 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
+
+        <div
+          className="mobile-btn cursor-pointer block md:hidden"
+          onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
+        >
+          <HiMenuAlt3 size={24} />
+        </div>
       </div>
     </header>
   );
