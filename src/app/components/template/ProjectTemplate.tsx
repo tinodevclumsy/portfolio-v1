@@ -18,11 +18,11 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({
   detail,
 }) => {
   return (
-    <div className="container mx-auto pt-28">
+    <div className="container mx-auto pt-48">
       <div>
         <div className="detail-header border-b-2 border-blue-900 pb-10 mb-10">
-          <h2 className="text-2xl font-semibold">{projectName}</h2>
-          <div className="text-xs text-stone-400 mt-5">
+          <h1 className="text-3xl font-semibold">{projectName}</h1>
+          <div className="text-base text-stone-400 mt-5">
             <p>{detail}</p>
             <p>{duration}</p>
           </div>
@@ -30,7 +30,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({
 
         <ul className="mb-10">
           {description.map((ele, index) => (
-            <li className="list-disc text-sm" key={`description-${index}`}>
+            <li className="list-disc text-sm ml-4" key={`description-${index}`}>
               {ele}
             </li>
           ))}

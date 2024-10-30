@@ -12,7 +12,7 @@ const Scene: React.FC = () => {
 
   return (
     <div
-      className={`h-full ${is_home ? "absolute" : "fixed"} w-full top-0`}
+      className={`absolute ${is_home ? " h-full" : "h-40"} w-full top-0 left-0`}
       style={{ zIndex: -1 }}
     >
       <Canvas>
