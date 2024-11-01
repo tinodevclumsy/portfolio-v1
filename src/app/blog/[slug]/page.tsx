@@ -37,8 +37,8 @@ const BlogDetailPage = async ({ params }: BlogPostProps) => {
   return (
     <div className="items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
       <main>
-        <div className="container mx-auto pt-44">
-          <div className="pb-5">
+        <div className="max-w-5xl mx-auto pt-56 pb-16">
+          <div className="mb-8 pb-5 border-b-2 border-blue-900">
             <h1 className="text-3xl font-semibold">{post.title}</h1>
           </div>
           <Content content={post.content} />

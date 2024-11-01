@@ -52,7 +52,7 @@ const Blog: React.FC = async () => {
   return (
     <div className="items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
       <main>
-        <div className="container mx-auto pt-28">
+        <div className="container mx-auto pt-56 pb-16">
           <h1 className="text-4xl uppercase font-semibold">Blog</h1>
 
           <div className="mt-4">

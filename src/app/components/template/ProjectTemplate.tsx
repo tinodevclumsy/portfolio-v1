@@ -18,7 +18,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({
   detail,
 }) => {
   return (
-    <div className="container mx-auto pt-48">
+    <div className="max-w-5xl mx-auto pt-56 pb-16">
       <div>
         <div className="detail-header border-b-2 border-blue-900 pb-10 mb-10">
           <h1 className="text-3xl font-semibold">{projectName}</h1>
