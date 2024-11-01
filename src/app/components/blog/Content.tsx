@@ -1,8 +1,8 @@
 "use client";
-import { Document, BLOCKS } from "@contentful/rich-text-types";
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
+import { Document, BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
-const Text = ({ children }) => <p className="align-center mb-8">{children}</p>;
 
 interface ContentProps {
   content: Document;
@@ -11,14 +11,25 @@ interface ContentProps {
 const Content: React.FC<ContentProps> = ({ content }) => {
   const options = {
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+      [BLOCKS.PARAGRAPH]: (node, children) => {
+        if (node.content[0]?.marks?.some((mark) => mark.type === "code")) {
+          return children;
+        }
+
+        return <p>{children}</p>;
+      },
     },
     renderMark: {
-      'code': (text) => (
-        <code className="bg-gray-100 text-red-600 px-2 py-1 rounded-md font-mono text-sm">
-          {text}
-        </code>
-      ),
+      code: (text) => {
+        const htmlContent = hljs.highlightAuto(text).value;
+        return (
+          <pre className="theme-atom-one-dark shadow-3xl text-sm relative mb-8">
+            <span className="hljs block p-4">
+              <code dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            </span>
+          </pre>
+        );
+      },
     },
   };
 
