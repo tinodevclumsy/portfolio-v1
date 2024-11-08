@@ -6,7 +6,7 @@ import Sphere from "./Sphere";
 import Lights from "./Lights";
 import { usePathname } from "next/navigation";
 
-const Scene: React.FC = () => {
+const CanvasScene: React.FC = () => {
   const router = usePathname();
   const is_home = router === "/";
 
@@ -29,4 +29,4 @@ const Scene: React.FC = () => {
   );
 };
 
-export default Scene;
+export default CanvasScene;
