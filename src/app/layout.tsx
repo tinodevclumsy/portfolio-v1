@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import dynamic from "next/dynamic";
+export const runtime = "edge";
 const Scene = dynamic(() => import("./components/three/CanvasScene"), {ssr: false});
 
 const geistSans = localFont({
