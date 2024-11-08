@@ -2,8 +2,8 @@
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import Sphere from "./Sphere";
-import Lights from "./Lights";
+import Sphere from "./CanvasSphere";
+import Lights from "./CanvasLights";
 import { usePathname } from "next/navigation";
 
 const CanvasScene: React.FC = () => {
