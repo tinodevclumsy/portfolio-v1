@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 // import dynamic from "next/dynamic";
-import Scene from "./components/three/Scene";
+import Scene from "@/app/components/three/Scene";
 // const Scene = dynamic(() => import("./components/three/Scene"), { ssr: false });
 
 const geistSans = localFont({
