@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import dynamic from "next/dynamic";
 export const runtime = "edge";
 const Scene = dynamic(() => import("./components/three/CanvasScene"), {ssr: false});
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,6 +45,8 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+
+      <GoogleAnalytics gaId="G-PM3GM2BY0K" />
     </html>
   );
 }
