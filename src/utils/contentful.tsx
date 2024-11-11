@@ -18,8 +18,9 @@ type BlogPost = {
   };
 };
 
-export const getPosts = () => {
-  const res = client.getEntries<BlogPost>({
+export const getPosts = async () => {
+  const getEntries = client.getEntries.bind(this);
+  const res = await getEntries<BlogPost>({
     content_type: "blogPost",
   });
 
