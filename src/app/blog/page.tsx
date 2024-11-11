@@ -1,55 +1,34 @@
-import { client } from "@/utils/contentful";
-import * as Contentful from "contentful";
-// import { GoArrowRight } from "react-icons/go";
-// import Link from "next/link";
+import { getPosts } from "@/utils/contentful";
+import { GoArrowRight } from "react-icons/go";
+import Link from "next/link";
 
-type BlogPost = {
-  contentTypeId: "blogPost";
-  fields: {
-    title: Contentful.EntryFieldTypes.Text;
-    content: Contentful.EntryFieldTypes.RichText;
-    slug: Contentful.EntryFieldTypes.Text;
-    date: Contentful.EntryFieldTypes.Date;
-  };
+const formatDate = (d: string) => {
+  const date = new Date(d);
+
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const formattedDate = `${
+    monthNames[date.getMonth()]
+  } ${date.getDate()}, ${date.getFullYear()}`;
+
+  return formattedDate;
 };
-
-const getPosts = () => {
-  const res = client.getEntries<BlogPost>({
-    content_type: "blogPost",
-  });
-
-  return res;
-};
-
-// const formatDate = (d: string) => {
-//   const date = new Date(d);
-
-//   const monthNames = [
-//     "January",
-//     "February",
-//     "March",
-//     "April",
-//     "May",
-//     "June",
-//     "July",
-//     "August",
-//     "September",
-//     "October",
-//     "November",
-//     "December",
-//   ];
-
-//   const formattedDate = `${
-//     monthNames[date.getMonth()]
-//   } ${date.getDate()}, ${date.getFullYear()}`;
-
-//   return formattedDate;
-// };
 
 const Blog: React.FC = async () => {
   const posts = await getPosts();
-
-  console.log(posts);
 
   return (
     <div className="items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
@@ -58,7 +37,7 @@ const Blog: React.FC = async () => {
           <h1 className="text-4xl uppercase font-semibold">Blog</h1>
 
           <div className="mt-4">
-            {/* {posts.items.map((post, index) => {
+            {posts.items.map((post, index) => {
               return (
                 <Link
                   href={`/blog/${post.fields.slug}`}
@@ -76,7 +55,7 @@ const Blog: React.FC = async () => {
                   </div>
                 </Link>
               );
-            })} */}
+            })}
           </div>
         </div>
       </main>
