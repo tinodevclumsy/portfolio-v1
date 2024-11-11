@@ -1,50 +1,50 @@
-import { client } from "@/utils/contentful";
-import * as Contentful from "contentful";
-import { GoArrowRight } from "react-icons/go";
-import Link from "next/link";
+// import { client } from "@/utils/contentful";
+// import * as Contentful from "contentful";
+// import { GoArrowRight } from "react-icons/go";
+// import Link from "next/link";
 
-type BlogPost = {
-  contentTypeId: "blogPost";
-  fields: {
-    title: Contentful.EntryFieldTypes.Text;
-    content: Contentful.EntryFieldTypes.RichText;
-    slug: Contentful.EntryFieldTypes.Text;
-    date: Contentful.EntryFieldTypes.Date;
-  };
-};
+// type BlogPost = {
+//   contentTypeId: "blogPost";
+//   fields: {
+//     title: Contentful.EntryFieldTypes.Text;
+//     content: Contentful.EntryFieldTypes.RichText;
+//     slug: Contentful.EntryFieldTypes.Text;
+//     date: Contentful.EntryFieldTypes.Date;
+//   };
+// };
 
-const getPosts = () => {
-  const res = client.getEntries<BlogPost>({
-    content_type: "blogPost",
-  });
+// const getPosts = () => {
+//   const res = client.getEntries<BlogPost>({
+//     content_type: "blogPost",
+//   });
 
-  return res;
-};
+//   return res;
+// };
 
-const formatDate = (d: string) => {
-  const date = new Date(d);
+// const formatDate = (d: string) => {
+//   const date = new Date(d);
 
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+//   const monthNames = [
+//     "January",
+//     "February",
+//     "March",
+//     "April",
+//     "May",
+//     "June",
+//     "July",
+//     "August",
+//     "September",
+//     "October",
+//     "November",
+//     "December",
+//   ];
 
-  const formattedDate = `${
-    monthNames[date.getMonth()]
-  } ${date.getDate()}, ${date.getFullYear()}`;
+//   const formattedDate = `${
+//     monthNames[date.getMonth()]
+//   } ${date.getDate()}, ${date.getFullYear()}`;
 
-  return formattedDate;
-};
+//   return formattedDate;
+// };
 
 const Blog: React.FC = async () => {
   // const posts = await getPosts();
