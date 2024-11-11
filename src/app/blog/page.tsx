@@ -47,7 +47,7 @@ const formatDate = (d: string) => {
 };
 
 const Blog: React.FC = async () => {
-  const posts = await getPosts();
+  // const posts = await getPosts();
 
   return (
     <div className="items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
@@ -56,7 +56,7 @@ const Blog: React.FC = async () => {
           <h1 className="text-4xl uppercase font-semibold">Blog</h1>
 
           <div className="mt-4">
-            {posts.items.map((post, index) => {
+            {/* {posts.items.map((post, index) => {
               return (
                 <Link
                   href={`/blog/${post.fields.slug}`}
@@ -74,7 +74,7 @@ const Blog: React.FC = async () => {
                   </div>
                 </Link>
               );
-            })}
+            })} */}
           </div>
         </div>
       </main>
