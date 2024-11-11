@@ -1,25 +1,25 @@
-// import { client } from "@/utils/contentful";
-// import * as Contentful from "contentful";
+import { client } from "@/utils/contentful";
+import * as Contentful from "contentful";
 // import { GoArrowRight } from "react-icons/go";
 // import Link from "next/link";
 
-// type BlogPost = {
-//   contentTypeId: "blogPost";
-//   fields: {
-//     title: Contentful.EntryFieldTypes.Text;
-//     content: Contentful.EntryFieldTypes.RichText;
-//     slug: Contentful.EntryFieldTypes.Text;
-//     date: Contentful.EntryFieldTypes.Date;
-//   };
-// };
+type BlogPost = {
+  contentTypeId: "blogPost";
+  fields: {
+    title: Contentful.EntryFieldTypes.Text;
+    content: Contentful.EntryFieldTypes.RichText;
+    slug: Contentful.EntryFieldTypes.Text;
+    date: Contentful.EntryFieldTypes.Date;
+  };
+};
 
-// const getPosts = () => {
-//   const res = client.getEntries<BlogPost>({
-//     content_type: "blogPost",
-//   });
+const getPosts = () => {
+  const res = client.getEntries<BlogPost>({
+    content_type: "blogPost",
+  });
 
-//   return res;
-// };
+  return res;
+};
 
 // const formatDate = (d: string) => {
 //   const date = new Date(d);
@@ -47,7 +47,9 @@
 // };
 
 const Blog: React.FC = async () => {
-  // const posts = await getPosts();
+  const posts = await getPosts();
+
+  console.log(posts);
 
   return (
     <div className="items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
