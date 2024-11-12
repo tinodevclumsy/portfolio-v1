@@ -1,4 +1,6 @@
-import { getPosts } from "@/utils/contentful";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// import { getPosts } from "@/utils/contentful";
+
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 
@@ -27,8 +29,14 @@ const formatDate = (d: string) => {
   return formattedDate;
 };
 
+const test = async function fetchPosts() {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`);
+  const data = await response.json();
+  return data
+}
+
 const Blog: React.FC = async () => {
-  const posts = await getPosts();
+  const posts = await test();
 
   return (
     <div className="items-center min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
@@ -37,7 +45,7 @@ const Blog: React.FC = async () => {
           <h1 className="text-4xl uppercase font-semibold">Blog</h1>
 
           <div className="mt-4">
-            {posts.items.map((post, index) => {
+            {posts.items.map((post: any, index: number) => {
               return (
                 <Link
                   href={`/blog/${post.fields.slug}`}
