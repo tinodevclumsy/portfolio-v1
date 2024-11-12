@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// import { getPosts } from "@/utils/contentful";
 import { fetchPosts } from "@/utils/contentful";
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
@@ -28,12 +27,6 @@ const formatDate = (d: string) => {
 
   return formattedDate;
 };
-
-// const test = async function fetchPosts() {
-//   const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`);
-//   const data = await response.json();
-//   return data
-// }
 
 const Blog: React.FC = async () => {
   const posts = await fetchPosts();
