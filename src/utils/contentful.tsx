@@ -1,28 +1,21 @@
-import { createClient } from "contentful";
-import * as Contentful from "contentful";
+const CONTENTFUL_SPACE_ID = process.env.CONTENTFUL_SPACE_ID!;
+const CONTENTFUL_ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN!;
 
-const space = process.env.CONTENTFUL_SPACE_ID as string;
-const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN as string;
-export const client = createClient({
-  space,
-  accessToken,
-});
+export async function fetchPosts() {
+  const url = `https://cdn.contentful.com/spaces/${CONTENTFUL_SPACE_ID}/environments/master/entries?access_token=${CONTENTFUL_ACCESS_TOKEN}&content_type=blogPost`;
 
-type BlogPost = {
-  contentTypeId: "blogPost";
-  fields: {
-    title: Contentful.EntryFieldTypes.Text;
-    content: Contentful.EntryFieldTypes.RichText;
-    slug: Contentful.EntryFieldTypes.Text;
-    date: Contentful.EntryFieldTypes.Date;
-  };
-};
-
-export const getPosts = async () => {
-  const getEntries = client.getEntries.bind(this);
-  const res = await getEntries<BlogPost>({
-    content_type: "blogPost",
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${CONTENTFUL_ACCESS_TOKEN}`,
+    },
+    next: { revalidate: 60 }, // ISR 적용을 위한 설정 (선택 사항)
   });
 
-  return res;
-};
+  if (!response.ok) {
+    throw new Error(`Failed to fetch posts: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return data
+}
