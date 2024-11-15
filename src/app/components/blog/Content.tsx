@@ -60,7 +60,7 @@ const Content: React.FC<ContentProps> = ({ content }) => {
         const htmlContent = hljs.highlightAuto(text).value;
         return (
           <pre className="theme-atom-one-dark shadow-3xl text-sm relative my-8">
-            <span className="hljs block p-4">
+            <span className="hljs whitespace-pre-wrap break-words block p-4">
               <code dangerouslySetInnerHTML={{ __html: htmlContent }} />
             </span>
           </pre>
