@@ -1,5 +1,9 @@
 import ProjectTemplate from "@/app/components/template/ProjectTemplate";
 
+export const metadata = {
+  title: "Statify - Seungjun Lee Front-end Developer in Metro Vancouver",
+};
+
 const Page = () => {
   const data = {
     projectName: "Statify",

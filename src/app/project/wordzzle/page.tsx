@@ -1,5 +1,9 @@
 import ProjectTemplate from "@/app/components/template/ProjectTemplate";
 
+export const metadata = {
+  title: "Wordzzle - Seungjun Lee Front-end Developer in Metro Vancouver",
+};
+
 const Page = () => {
   const data = {
     projectName: "Wordzzle",
@@ -13,16 +17,16 @@ const Page = () => {
     ],
     stack: ["React.js", "Redux", "Express.js", "MongoDB", "styled-components"],
     image: [
-        "/images/project/wordzzle/WORDZZLE_MAIN.webp",
-        "/images/project/wordzzle/WORDZZLE_ADD.webp",
-        "/images/project/wordzzle/WORDZZLE_EDIT.webp",
-        "/images/project/wordzzle/WORDZZLE_LANDING.webp",
-        "/images/project/wordzzle/WORDZZLE_LIST.webp",
-        "/images/project/wordzzle/WORDZZLE_LOGIN.webp",
-        "/images/project/wordzzle/WORDZZLE_NOTIFY.webp",
-        "/images/project/wordzzle/WORDZZLE_QUIZ.webp",
-        "/images/project/wordzzle/WORDZZLE_REGISTER.webp",
-        "/images/project/wordzzle/WORDZZLE_RESULT.webp",
+      "/images/project/wordzzle/WORDZZLE_MAIN.webp",
+      "/images/project/wordzzle/WORDZZLE_ADD.webp",
+      "/images/project/wordzzle/WORDZZLE_EDIT.webp",
+      "/images/project/wordzzle/WORDZZLE_LANDING.webp",
+      "/images/project/wordzzle/WORDZZLE_LIST.webp",
+      "/images/project/wordzzle/WORDZZLE_LOGIN.webp",
+      "/images/project/wordzzle/WORDZZLE_NOTIFY.webp",
+      "/images/project/wordzzle/WORDZZLE_QUIZ.webp",
+      "/images/project/wordzzle/WORDZZLE_REGISTER.webp",
+      "/images/project/wordzzle/WORDZZLE_RESULT.webp",
     ],
   };
   return (
