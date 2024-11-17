@@ -1,5 +1,9 @@
 import ExperienceTemplate from "@/app/components/template/ExperienceTemplate";
 
+export const metadata = {
+  title: "Experience - Seungjun Lee Front-end Developer in Metro Vancouver",
+};
+
 const Page = () => {
   const data = {
     companyName: "Vinple",

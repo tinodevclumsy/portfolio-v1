@@ -8,6 +8,7 @@ export async function fetchPosts() {
     headers: {
       Authorization: `Bearer ${CONTENTFUL_ACCESS_TOKEN}`,
     },
+    next: { revalidate: 86400 }, // caching for a day
   });
 
   if (!response.ok) {
@@ -25,6 +26,7 @@ export async function fetchPostBySlug(slug: string) {
     headers: {
       Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
     },
+    next: { revalidate: 86400 }, // caching for a day
   });
 
   if (!response.ok) {

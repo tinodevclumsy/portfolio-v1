@@ -3,6 +3,10 @@ import { fetchPosts } from "@/utils/contentful";
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Blog - Seungjun Lee Front-end Developer in Metro Vancouver",
+};
+
 const formatDate = (d: string) => {
   const date = new Date(d);
 
