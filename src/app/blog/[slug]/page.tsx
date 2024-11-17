@@ -4,6 +4,17 @@ interface BlogPostProps {
   params: { slug: string };
 }
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const post = await fetchPostBySlug(params.slug);
+  return {
+    title: `${post.fields.title} - Seungjun Lee Front-end Developer in Metro Vancouver`, // 글 제목
+  };
+}
+
 const BlogDetailPage = async ({ params }: BlogPostProps) => {
   const { slug } = params;
   const post = await fetchPostBySlug(slug);
