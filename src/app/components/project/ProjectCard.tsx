@@ -12,7 +12,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   order,
 }) => {
   return (
-    <div className="pb-64 relative group rounded-md overflow-hidden drop-shadow-md bg-slate-900">
+    <div className="aspect-video relative group rounded-md overflow-hidden drop-shadow-md bg-slate-900">
       <div className="absolute w-full top-3 px-5 flex justify-between items-center z-10">
         <h6 className="font-medium transform text-sm text-stone-400 ">
           {order}.

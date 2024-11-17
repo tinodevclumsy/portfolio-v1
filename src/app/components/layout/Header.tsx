@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
+import SocialNav from "../common/SocialNav";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -10,7 +11,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     setIsScrolled(document.documentElement.scrollTop > 0);
-    
+
     const handleScroll = () => {
       setIsScrolled(document.documentElement.scrollTop > 0);
     };
@@ -31,50 +32,50 @@ const Header: React.FC = () => {
           <h6>SEUNGJUN LEE.</h6>
         </Link>
 
-        <nav
+        <div
           className={`fixed flex items-center justify-start bg-slate-950 top-0 left-0 w-full h-full px-6 transition-transform duration-300 ${
             isOpenMobileMenu ? "translate-x-0" : "translate-x-full"
           } transform md:hidden`}
+          onClick={() => setIsOpenMobileMenu(false)}
         >
-          <ul className="flex gap-6 flex-col md:flex-row">
-            <li>
-              <Link
-                className="text-5xl text-stroke-sm text-stroke-white"
-                onClick={() => setIsOpenMobileMenu(false)}
-                href="/#about"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-5xl text-stroke-sm text-stroke-white"
-                onClick={() => setIsOpenMobileMenu(false)}
-                href="/#experience"
-              >
-                Experience
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-5xl text-stroke-sm text-stroke-white"
-                onClick={() => setIsOpenMobileMenu(false)}
-                href="/#contact"
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-5xl text-stroke-sm text-stroke-white"
-                onClick={() => setIsOpenMobileMenu(false)}
-                href="/blog"
-              >
-                Blog
-              </Link>
-            </li>
-          </ul>
-        </nav>
+          <nav>
+            <ul className="flex gap-6 flex-col md:flex-row">
+              <li>
+                <Link
+                  className="text-5xl text-stroke-sm text-stroke-white"
+                  href="/#about"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-5xl text-stroke-sm text-stroke-white"
+                  href="/#experience"
+                >
+                  Experience
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-5xl text-stroke-sm text-stroke-white"
+                  href="/#contact"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-5xl text-stroke-sm text-stroke-white"
+                  href="/blog"
+                >
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <SocialNav />
+        </div>
 
         <nav className="hidden md:block">
           <ul className="flex gap-6 flex-col md:flex-row">

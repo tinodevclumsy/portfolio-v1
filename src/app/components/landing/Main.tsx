@@ -3,7 +3,7 @@ import SocialNav from "../common/SocialNav";
 const Landing = () => {
   return (
     <section className="container flex items-center h-screen mx-auto">
-      <h1 className="text-6xl pt-32">
+      <h1 className="text-4xl sm:text-6xl pt-32">
         SEUNGJUN LEE <br />
         FRONT-END DEVELOPER <br />
         <span className="text-stroke-sm text-stroke-white">
