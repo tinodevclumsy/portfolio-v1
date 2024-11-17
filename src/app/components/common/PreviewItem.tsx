@@ -5,7 +5,7 @@ type ItemProps = {
 
 const PreviewItem: React.FC<ItemProps> = ({ name, background }) => {
   return (
-    <div className="pb-64 relative group rounded-md overflow-hidden drop-shadow-md">
+    <div className="aspect-video relative group rounded-md overflow-hidden drop-shadow-md">
       <div
         className="absolute top-0 left-0 w-full h-full bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
         style={{ backgroundImage: `url(${background})` }}
