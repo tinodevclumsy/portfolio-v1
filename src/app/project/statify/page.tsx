@@ -17,6 +17,7 @@ const Page = () => {
       "/images/project/statify/board.webp",
       "/images/project/statify/sample.webp",
     ],
+    github: 'https://github.com/tinodevclumsy/statify',
   };
   return (
     <div className="min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">

@@ -28,6 +28,7 @@ const Page = () => {
       "/images/project/wordzzle/WORDZZLE_REGISTER.webp",
       "/images/project/wordzzle/WORDZZLE_RESULT.webp",
     ],
+    github: "https://github.com/tinodevclumsy/wordzzle-frontend"
   };
   return (
     <div className="min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">

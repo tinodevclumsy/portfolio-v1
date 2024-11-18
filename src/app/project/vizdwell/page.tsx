@@ -15,6 +15,8 @@ const Page = () => {
       "/images/project/vizdwell/vizdwell-0.png",
       "/images/project/vizdwell/vizdwell-1.png",
     ],
+    github: 'https://github.com/tinodevclumsy/VizDwell-v1',
+    url: 'https://vizdwell-v1.pages.dev/',
   };
   return (
     <div className="min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">

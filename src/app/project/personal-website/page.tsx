@@ -15,6 +15,8 @@ const Page = () => {
     image: [
       "/images/project/portfolio/main.webp",
     ],
+    github: 'https://github.com/tinodevclumsy/portfolio',
+    url: 'https://tinodevclumsy.github.io/portfolio',
   };
   return (
     <div className="min-h-screen px-5 font-[family-name:var(--font-geist-sans)]">
