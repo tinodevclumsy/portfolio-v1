@@ -1,5 +1,6 @@
 import PreviewItem from "../common/PreviewItem";
-
+import Link from "next/link";
+import { RxExternalLink, RxGithubLogo } from "react-icons/rx";
 interface ProjectTemplateProps {
   projectName: string;
   duration?: string;
@@ -7,6 +8,8 @@ interface ProjectTemplateProps {
   description: string[];
   stack?: string[];
   image?: string[];
+  github?: string;
+  url?: string;
 }
 
 const ProjectTemplate: React.FC<ProjectTemplateProps> = ({
@@ -16,6 +19,8 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({
   stack,
   image,
   detail,
+  github,
+  url,
 }) => {
   return (
     <div className="max-w-5xl mx-auto pt-56 pb-16">
@@ -25,6 +30,19 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({
           <div className="text-base text-stone-400 mt-5">
             <p>{detail}</p>
             <p>{duration}</p>
+          </div>
+
+          <div className="link-nav flex gap-3 mt-3">
+            {github && (
+              <Link href={github} target="_blank">
+                <RxGithubLogo size={20} />
+              </Link>
+            )}
+            {url && (
+              <Link href={url} target="_blank">
+                <RxExternalLink size={20} />
+              </Link>
+            )}
           </div>
         </div>
 
@@ -36,7 +54,7 @@ const ProjectTemplate: React.FC<ProjectTemplateProps> = ({
           ))}
         </ul>
 
-        <ul className="flex gap-4">
+        <ul className="flex flex-wrap gap-4">
           {stack?.map((ele, index) => (
             <li
               className="text-sm py-1 px-2 rounded-md bg-blue-900"
