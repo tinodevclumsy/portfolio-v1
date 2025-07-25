@@ -67,7 +67,8 @@ const Header: React.FC = () => {
               <li>
                 <Link
                   className="text-5xl text-stroke-sm text-stroke-white"
-                  href="/blog"
+                  href="https://tinodevclumsy.github.io"
+                  target="_blank"
                 >
                   Blog
                 </Link>
@@ -89,7 +90,9 @@ const Header: React.FC = () => {
               <Link href="/#contact">Contact</Link>
             </li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <Link href="https://tinodevclumsy.github.io" target="_blank">
+                Blog
+              </Link>
             </li>
           </ul>
         </nav>
